@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:StackLayoutTutorial" x:Class="StackLayoutTutorial.MainPage">
+    <StackLayout Margin="20,35,20,25">
+        <ListView ItemsSource="{Binding Monkeys}"
+          HasUnevenRows="true"
+          ItemSelected="OnListViewItemSelected"
+          ItemTapped="OnListViewItemTapped">
+    <ListView.ItemTemplate>
+        <DataTemplate>
+            <ViewCell>
+                <Grid Padding="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.RowSpan="2"
+                           Source="{Binding ImageUrl}"
+                           Aspect="AspectFill"
+                           HeightRequest="60"
+                           WidthRequest="60" />
+                    <Label Grid.Column="1"
+                           Text="{Binding Name}"
+                           FontAttributes="Bold" />
+                    <Label Grid.Row="1"
+                           Grid.Column="1"
+                           Text="{Binding Location}"
+                           VerticalOptions="End" />
+                </Grid>
+            </ViewCell>
+        </DataTemplate>
+    </ListView.ItemTemplate>
+</ListView>
+       <!-- <Entry Placeholder="Enter text" TextChanged="OnEntryTextChanged" Completed="OnEntryCompleted" />
+        <Editor Placeholder="Enter multi-line text here" HeightRequest="200" TextChanged="OnEditorTextChanged" Completed="OnEditorCompleted" IsSpellCheckEnabled="false"
+        IsTextPredictionEnabled="false"  />
+                <Image Source="XamarinLogo"
+                       Aspect="Fill"
+               HeightRequest="{OnPlatform iOS=300, Android=250}"
+               WidthRequest="{OnPlatform iOS=300, Android=250}"
+               HorizontalOptions="Center" />
+       <Grid Margin="20,35,20,20">
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="0.5*" />
+        <ColumnDefinition Width="0.5*" />
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+        <RowDefinition Height="50" />
+        <RowDefinition Height="30" />
+        <RowDefinition Height="30" />
+    </Grid.RowDefinitions>
+    <Label Grid.ColumnSpan="2"
+           Text="This text uses the ColumnSpan property to span both columns." />
+    <Label Grid.Row="1"
+           Grid.RowSpan="2"
+           Text="This text uses the RowSpan property to span two rows." />
+</Grid>-->
+        
+    </StackLayout>
+</ContentPage>
